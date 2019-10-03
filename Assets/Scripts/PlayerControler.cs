@@ -6,6 +6,8 @@ public class PlayerControler : MonoBehaviour
 {
     public float speed;
     private float horizontalInput;
+    private float xRange = 15.0f;
+    public GameObject projecttile;
     
     // Start is called before the first frame update
     void Start()
@@ -16,17 +18,25 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(projecttile, transform.position, projecttile.transform.rotation);
+
+        }
+        
+        
+        
         //Move left/right
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
 
         //if/else if the player goes beyond the camera's view
-        if (transform.position.x < -10)
+        if (transform.position.x < -15)
         {
-            transform.position = new Vector3(-10, transform.position.y, transform.position.z);
-        }else if (transform.position.x > 10)
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }else if (transform.position.x > 15)
         {
-            transform.position = new Vector3(10, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
     }
 }
