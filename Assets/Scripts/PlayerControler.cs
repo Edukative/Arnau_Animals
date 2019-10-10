@@ -6,8 +6,10 @@ public class PlayerControler : MonoBehaviour
 {
     public float speed;
     private float horizontalInput;
-    private float xRange = 15.0f;
+    private float xRange = 20.0f;
     public GameObject projecttile;
+
+    public int health;
     
     // Start is called before the first frame update
     void Start()
@@ -31,10 +33,10 @@ public class PlayerControler : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
 
         //if/else if the player goes beyond the camera's view
-        if (transform.position.x < -15)
+        if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }else if (transform.position.x > 15)
+        }else if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
