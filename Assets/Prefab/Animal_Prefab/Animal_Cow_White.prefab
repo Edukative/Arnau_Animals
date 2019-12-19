@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 5486801035929816664}
   m_Layer: 0
   m_Name: Animal_Cow_White
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -596,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad716cd57cad03449936832c2662a079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &5486801035929816664
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,16 +19,19 @@ public class DetectorColision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        if(other.tag != "Player")
+        
+        if(other.tag == "Player" && this.tag == "Animal")
         {
-            Destroy(other.gameObject);
+            PlayerControler player = other.GetComponent<PlayerControler>();
+            player.LoseHP();
+            Debug.Log(player.health);
+            Destroy(gameObject);
         }
 
-        else
+        else if (this.tag != "Projectile")
         {
-            player.health--;
-            Debug.Log(player.health);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
