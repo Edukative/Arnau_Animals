@@ -302,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405599099}
   m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: -431, y: -147.3, z: 11.96}
+  m_LocalPosition: {x: -420.9, y: -147.3, z: 11.96}
   m_LocalScale: {x: 0.66999996, y: 0.7199999, z: 1}
   m_Children: []
   m_Father: {fileID: 2124375211}
@@ -773,7 +773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900955854}
   m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: -425.7, y: -147.3, z: 11.96}
+  m_LocalPosition: {x: -415.6, y: -147.3, z: 11.96}
   m_LocalScale: {x: 0.66999996, y: 0.7199999, z: 1}
   m_Children: []
   m_Father: {fileID: 2124375211}
@@ -954,6 +954,9 @@ MonoBehaviour:
   - {fileID: 6561467534075853146, guid: 40b0a775d553a204ab7678c379aac5aa, type: 3}
   - {fileID: 7537712204770132894, guid: 48342e997484be74caad2dedc28cc9d8, type: 3}
   animalIndex: 0
+  animalsDestroyedCount: 0
+  repeatRateMin: 1
+  repeatRateMax: 5
 --- !u!4 &1464301019
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,6 +1072,7 @@ MonoBehaviour:
     type: 3}
   health: 3
   isGameOver: 0
+  restart: 0
 --- !u!54 &1775712650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1123,7 +1127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794786038}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -436.04, y: -147.3, z: 11.96}
+  m_LocalPosition: {x: -426.2, y: -147.3, z: 11.96}
   m_LocalScale: {x: 0.67, y: 0.72, z: 1}
   m_Children: []
   m_Father: {fileID: 2124375211}

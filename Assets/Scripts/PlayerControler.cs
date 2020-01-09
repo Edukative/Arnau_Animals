@@ -11,6 +11,7 @@ public class PlayerControler : MonoBehaviour
 
     public int health;
     public bool isGameOver = false;
+    public bool restart = false;
 
     private SpriteRenderer hp1;
     private SpriteRenderer hp2;
@@ -28,28 +29,41 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (!isGameOver)
         {
-            Instantiate(projecttile, transform.position, projecttile.transform.rotation);
 
-        }
-        
-        
-        
-        //Move left/right
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Instantiate(projecttile, transform.position, projecttile.transform.rotation);
 
-        //if/else if the player goes beyond the camera's view
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }else if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            }
+
+
+
+            //Move left/right
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+
+            //if/else if the player goes beyond the camera's view
+            if (transform.position.x < -xRange)
+            {
+                transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x > xRange)
+            {
+                transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            }
         }
+        else if (isGameOver && Input.GetKeyDown(KeyCode.Space))
+        {
+            isGameOver = false;
+            health = 4;
+            LoseHP();
+            restart = true;
+        }
+
+
     }
-
    public void LoseHP()
     {
         if (health >= 0)
